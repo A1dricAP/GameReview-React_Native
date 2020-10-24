@@ -6,7 +6,7 @@ export default function ReviewDetails({navigation}){ //because we've used Review
 
     return(
         <View style={styles.container}>
-            {/* inorder to get the object from the home page, we need to use navigate method. */}
+            {/* inorder to get the object from the home page, we need to use navigation.getParam() method. */}
             <Text style={styles.text}>{navigation.getParam('title')}</Text>  
             <Text style={styles.text}>{navigation.getParam('body')}</Text>  
             <Text style={styles.text}>{navigation.getParam('rating')}</Text>  

@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Home from './screens/home'
 import About from './screens/about'
 import ReviewDetails from './screens/reviewdetails'
-import Navigator from './routes/homeStack'
+import Navigator from './routes/drawer'
 // import Navigator from './routes/homeStack'
 // import * as Font from 'expo-font'
 // import {AppLoading} from 'expo'

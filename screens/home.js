@@ -1,17 +1,29 @@
-import React  from "react";
-import {StyleSheet, View, Text, Button} from 'react-native'
+import React, {useState}  from "react";
+import {StyleSheet, View, Text, FlatList, TouchableOpacity} from 'react-native'
 
 export default function Home({navigation}){
-
-    //every component assigned a screen, automatically gets assigned a navigation prop to it.
-    const presshandler=()=>{
-        navigation.navigate('ReviewDetails')//reactnative will look at this and find this property in the homeStack.js file, and navigate to that file.
-    }
+    const [review, setreview]=useState([
+        {
+            title:'zelda', rating:5, body:'lorem ipsum', key:'1'
+        },
+        {
+            title:'aaron', rating:4, body:'lorem ipsum', key:'2'
+        },
+        {
+            title:'AP', rating:5, body:'lorem ipsum', key:'3'
+        }
+    ])
 
     return(
         <View style={styles.container}>
-            <Text style={styles.text}>Home screen🏚</Text>
-            <Button title='Go to review.📝'onPress={presshandler}/>
+           <FlatList data={review}
+           renderItem={({item})=>( //here item is the individual item of review object defined in the data prop.
+            //sending item as the second parameter to be retrieved in Reviewdetails file. 
+            <TouchableOpacity onPress={()=>navigation.navigate('ReviewDetails', item)}> 
+                <Text style={styles.text}>{item.title}</Text>
+            </TouchableOpacity>
+           )}
+           />
         </View>
     )
 }

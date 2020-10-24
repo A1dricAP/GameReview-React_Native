@@ -2,6 +2,7 @@ import {createStackNavigator} from 'react-navigation-stack'
 import {createAppContainer} from 'react-navigation'
 import Home from '../screens/home'
 import ReviewDetails from '../screens/reviewdetails'
+import About from '../screens/about'
 
 //creating a screen object and passing it as a parameter for the stack. {createStackNavigator}
 const screens= {
@@ -11,6 +12,9 @@ const screens= {
     },
     ReviewDetails:{
         screen:ReviewDetails
+    },
+    About:{
+        screen:About
     }
     
 }

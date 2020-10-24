@@ -30,7 +30,7 @@ export default function Home({navigation}){
 
 const styles=StyleSheet.create({
      container:{
-         backgroundColor:'#ffb56f',
+        //  backgroundColor:'',
          padding:24,
      
      },

@@ -1,9 +1,9 @@
-Methods
+# Methods
 
 1. createStackNavigator
 1. createAppContainer
 
-packages
+# packages
 
 1. react-navigation
 1. react-native-gesture-handler
@@ -12,3 +12,9 @@ packages
 1. react-native-screens
 1. react-native-safe-area-context
 1. react-native-community/masked-view
+
+# Navigation option
+
+1. defaultNavigationOptions
+1. headerTintColor
+1. headerStyle

@@ -16,7 +16,7 @@ export default function ReviewDetails({navigation}){ //because we've used Review
 
 const styles=StyleSheet.create({
     container:{
-        backgroundColor:'#df5f67',
+        // backgroundColor:'#df5f67',
         padding:24,
     
     },

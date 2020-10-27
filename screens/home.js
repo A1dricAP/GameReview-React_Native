@@ -1,5 +1,6 @@
 import React, {useState}  from "react";
 import {StyleSheet, View, Text, FlatList, TouchableOpacity} from 'react-native'
+import Card from '../shared/card'
 
 export default function Home({navigation}){
     const [review, setreview]=useState([
@@ -20,7 +21,9 @@ export default function Home({navigation}){
            renderItem={({item})=>( //here item is the individual item of review object defined in the data prop.
             //sending item as the second parameter to be retrieved in Reviewdetails file. 
             <TouchableOpacity onPress={()=>navigation.navigate('ReviewDetails', item)}> 
-                <Text style={styles.text}>{item.title}</Text>
+               <Card> 
+                   <Text style={styles.text}>{item.title}</Text>
+               </Card>
             </TouchableOpacity>
            )}
            />

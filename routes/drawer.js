@@ -3,12 +3,13 @@ import {createAppContainer} from 'react-navigation'
 import HomeStack from './homeStack'
 import aboutStack from './aboutStack'
 
+//encapsulating the StackNavigator in this Drawer Navigator.
 const RootdrawerNavigator=createDrawerNavigator({
     Home:{
-        screen:HomeStack
+        screen:HomeStack //using stack navigator.
     },
     About:{
-        screen:aboutStack
+        screen:aboutStack //using stack navigator.
     }
 })
 

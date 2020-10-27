@@ -1,5 +1,7 @@
 import {createStackNavigator} from 'react-navigation-stack'
 import About from '../screens/about'
+import React from 'react' //importing react, to render the header component in place of the title.
+import Header from '../shared/header'
 
 //creating a screen object and passing it as a parameter for the stack. {createStackNavigator}
 const screens= {
@@ -7,7 +9,7 @@ const screens= {
     About:{
         screen:About,
         navigationOptions:{
-            title:'About GameZone',
+            headerTitle:()=><Header/>,
             // headerStyle:{
             //     backgroundColor:'#ffb56f'
             // }

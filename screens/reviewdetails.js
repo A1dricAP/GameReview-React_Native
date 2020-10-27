@@ -9,7 +9,8 @@ export default function ReviewDetails({navigation}){ //because we've used Review
         <View style={styles.container}>
             {/* inorder to get the object from the home page, we need to use navigation.getParam() method. */}
           <Card>
-          <Text style={styles.text}>{navigation.getParam('title')}</Text>  
+              {/*this being sent as a prop to the card component*/}
+            <Text style={styles.text}>{navigation.getParam('title')}</Text>   
             <Text style={styles.text}>{navigation.getParam('body')}</Text>  
             <Text style={styles.text}>{navigation.getParam('rating')}</Text>
         </Card>  

@@ -2,7 +2,7 @@ import React, {useState}  from "react";
 import {StyleSheet, View, Text, FlatList, TouchableOpacity, Modal} from 'react-native'
 import Card from '../shared/card'
 import {MaterialIcons} from '@expo/vector-icons'
-
+import ReviewForm  from "./reviewForm";
 
 export default function Home({navigation}){
 
@@ -31,7 +31,7 @@ export default function Home({navigation}){
                   onPress={()=>setmodalOpen(false)}
                   style={styles.modalT}
             />
-                    <Text>Hello, from Modal!</Text>
+                    <ReviewForm/>
                 </View>
             </Modal>
 

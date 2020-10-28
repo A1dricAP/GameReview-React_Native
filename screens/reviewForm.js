@@ -1,6 +1,5 @@
 import React from 'react';
-import { StyleSheet, Button, TextInput, View, Text } from 'react-native';
-import { globalStyles } from '../styles/global.js';
+import { StyleSheet, Button, TextInput, View } from 'react-native';
 import { Formik } from 'formik';
 
 export default function ReviewForm() {
@@ -14,7 +13,9 @@ export default function ReviewForm() {
           console.log(values);
         }}
       >
-        {/* this works like binding. Formik needs this props jsx defined, that carries different functions w it to send input. */}
+        {/* this works like binding. Formik needs this "props"- jsx defined, 
+        that carries different functions w it, like-handleChange(), handleSubmit() to send input to the formik component
+        declared above; which will in turn use the data where this entire component is defined.. */}
         {props => (
           <View>
             <TextInput

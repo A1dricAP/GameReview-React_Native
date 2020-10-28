@@ -11,7 +11,7 @@ export default function Home({navigation}){
             title:'aaron', rating:4, body:'lorem ipsum', key:'2'
         },
         {
-            title:'AP', rating:5, body:'lorem ipsum', key:'3'
+            title:'AP', rating:2, body:'lorem ipsum', key:'3'
         }
     ])
 

@@ -14,7 +14,7 @@ export default function header({navigation}){
             <MaterialIcons style={styles.icon} size={28} name='menu' onPress={openMenu}/>
             <View>
                 <Text style={styles.headerText}>
-                    GameZone.
+                    GameZone 🎮
                 </Text>
             </View>
         </View>

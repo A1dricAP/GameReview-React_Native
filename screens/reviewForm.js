@@ -1,16 +1,18 @@
 import React from 'react';
-import { StyleSheet, Button, TextInput, View } from 'react-native';
+import { StyleSheet, Button, TextInput, View, ActionSheetIOS } from 'react-native';
 import { Formik } from 'formik';
 
-export default function ReviewForm() {
+export default function ReviewForm({addReview}) {
 
   return (
     
     <View style={styles.container}>
       <Formik
         initialValues={{ title: '', body: '', rating: '' }}
-        onSubmit={(values) => {
-          console.log(values);
+        onSubmit={(values, actions) => {
+          actions.resetForm()
+          addReview(values)
+          // console.log(values);
         }}
       >
         {/* this works like binding. Formik needs this "props"- jsx defined, 

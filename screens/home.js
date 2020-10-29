@@ -1,5 +1,5 @@
 import React, {useState}  from "react";
-import {StyleSheet, View, Text, FlatList, TouchableOpacity, Modal} from 'react-native'
+import {StyleSheet, View, Text, FlatList, TouchableOpacity, Modal, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import Card from '../shared/card'
 import {MaterialIcons} from '@expo/vector-icons'
 import ReviewForm  from "./reviewForm";
@@ -19,11 +19,20 @@ export default function Home({navigation}){
             title:'AP', rating:2, body:'lorem ipsum', key:'3'
         }
     ])
+//creating this function, to add and display reviews on the home page.
+    const addReview=(review)=>{
+        review.key=Math.random().toString()
+        setreview((currentReview)=>{
+            return [review,...currentReview]
+        })
+        setmodalOpen(false)
+    }
 
     return(
         <View style={styles.container}>
 
             <Modal visible={ modalOpen } animationType='slide'>
+                <TouchableWithoutFeedback onPress={()=>Keyboard.dismiss()}>
                 <View style={styles.modalContent}>
                 <MaterialIcons
                   name='close'
@@ -31,8 +40,9 @@ export default function Home({navigation}){
                   onPress={()=>setmodalOpen(false)}
                   style={styles.modalT}
             />
-                    <ReviewForm/>
+                    <ReviewForm addReview={addReview}/>
                 </View>
+                </TouchableWithoutFeedback>
             </Modal>
 
             <MaterialIcons

@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Button, TextInput, View, Text } from 'react-native';
 import { Formik } from 'formik';
 import * as yup from 'yup'
+import FlatButton from '../shared/button'
 
 //creating a schema for the validation of the form. Just like mongoose Schema.
 const ReviewSchema=yup.object({
@@ -62,7 +63,7 @@ export default function ReviewForm({addReview}) {
             />
             <Text style={styles.errors}>{props.touched.rating && props.errors.rating}</Text> 
             
-            <Button color='maroon' title="Submit" onPress={props.handleSubmit} /> 
+            <FlatButton text='Submit' onPress={props.handleSubmit}/> 
           </View>
         )}
       </Formik>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Button, TextInput, View, ActionSheetIOS } from 'react-native';
+import { StyleSheet, Button, TextInput, View, Text } from 'react-native';
 import { Formik } from 'formik';
 import * as yup from 'yup'
 
@@ -37,7 +37,10 @@ export default function ReviewForm({addReview}) {
               placeholder='Review title'
               onChangeText={props.handleChange('title')}
               value={props.values.title}
+              onBlur={props.handleBlur('title')}
             />
+            <Text style={styles.errors}>{props.touched.title && props.errors.title}</Text> 
+            {/* yup will add the error to the formik prop, which consists of an errors prop.*/}
 
             <TextInput
               style={styles.input}
@@ -45,15 +48,19 @@ export default function ReviewForm({addReview}) {
               placeholder='Review details'
               onChangeText={props.handleChange('body')}
               value={props.values.body}
+              onBlur={props.handleBlur('body')}
             />
+            <Text style={styles.errors}>{props.touched.body && props.errors.body}</Text> 
 
             <TextInput 
               style={styles.input}
               placeholder='Rating (1 - 5)'
               onChangeText={props.handleChange('rating')}
               value={props.values.rating}
+              onBlur={props.handleBlur('rating')}
               keyboardType='numeric' //to open a numeric keyboard.
             />
+            <Text style={styles.errors}>{props.touched.rating && props.errors.rating}</Text> 
             
             <Button color='maroon' title="Submit" onPress={props.handleSubmit} /> 
           </View>
@@ -71,5 +78,12 @@ const styles=StyleSheet.create({
         padding:10,
         fontSize:18,
         borderRadius:6
+    },
+    errors:{
+      color:'crimson',
+      fontWeight:'bold',
+      marginTop:6,
+      marginBottom:10,
+      textAlign:'center'
     }
 })

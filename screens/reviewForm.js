@@ -45,7 +45,7 @@ export default function ReviewForm({addReview}) {
 
             <TextInput
               style={styles.input}
-              multiline
+              multiline minHeight={100}
               placeholder='Review details'
               onChangeText={props.handleChange('body')}
               value={props.values.body}
